@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MathQuest Espacial · Misión Numérica</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars-bg" id="stars-bg"></div>
+
+<!-- Aviso de rotación (por si algún chromebook/tablet queda en vertical) -->
+<div id="rotate-notice">
+  <div class="rotate-icon">🔄</div>
+  <p>Girá la pantalla<br>para jugar mejor</p>
+</div>
+
+<div id="app">
+
+  <!-- ============ PANTALLA DE INICIO ============ -->
+  <section id="start-screen" class="screen active">
+    <div class="stage">
+      <div class="mission-panel">
+        <p class="eyebrow">Tripulación · 3er grado</p>
+        <h1 class="title">MathQuest <span>Espacial</span></h1>
+        <p class="subtitle">Pilotá tu nave por el sistema solar resolviendo misiones numéricas.</p>
+        <div class="commander-badge">
+          <span class="badge-icon">🧑‍🚀</span>
+          <span>¡Elegí un planeta para comenzar tu misión!</span>
+        </div>
+      </div>
+
+      <div class="solar-track" id="solar-track">
+        <div class="track-line"></div>
+        <!-- Los planetas (niveles) se insertan por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PANTALLA DE JUEGO ============ -->
+  <section id="game-screen" class="screen">
+    <header class="game-hud">
+      <button id="btn-exit" class="hud-btn" aria-label="Volver al mapa">
+        <span class="hud-btn-icon">←</span> Mapa
+      </button>
+
+      <div class="hud-center">
+        <div class="hud-planet">
+          <span id="hud-planet-icon">🪐</span>
+          <span id="hud-planet-name">Planeta</span>
+        </div>
+        <div class="progress-track" id="progress-track"><!-- dots por JS --></div>
+      </div>
+
+      <div class="hud-score">
+        <span class="hud-score-icon">⭐</span>
+        <span id="hud-score">0</span>
+      </div>
+    </header>
+
+    <main class="game-body">
+      <div class="ship-column">
+        <div class="ship-wrap">
+          <div id="ship" class="ship">🚀</div>
+          <div id="ship-fx" class="ship-fx"></div>
+        </div>
+        <p id="ship-message" class="ship-message">¡Vamos, tripulante!</p>
+      </div>
+
+      <div class="problem-column">
+        <div class="problem-card" id="problem-card">
+          <p class="problem-label" id="problem-label">Resolvé la misión:</p>
+          <div class="problem-display" id="problem-display"></div>
+        </div>
+
+        <div class="answers-grid" id="answers-grid">
+          <!-- Casilleros de respuesta y botón "Verificar" por JS -->
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ============ PANTALLA DE RESULTADOS ============ -->
+  <section id="end-screen" class="screen">
+    <div class="stage">
+      <div class="results-card">
+        <div class="results-icon" id="results-icon">🏆</div>
+        <h2 id="results-title">¡Misión completa!</h2>
+        <p id="results-subtitle">Llegaste a destino</p>
+
+        <div class="stars-earned" id="stars-earned">
+          <span class="star-slot">☆</span>
+          <span class="star-slot">☆</span>
+          <span class="star-slot">☆</span>
+        </div>
+
+        <div class="results-stats">
+          <div class="stat">
+            <span class="stat-value" id="results-correct">0</span>
+            <span class="stat-label">Correctas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="results-total">0</span>
+            <span class="stat-label">Total</span>
+          </div>
+        </div>
+
+        <div class="results-actions">
+          <button id="btn-retry" class="action-btn secondary">🔁 Reintentar</button>
+          <button id="btn-next" class="action-btn primary">Siguiente planeta →</button>
+          <button id="btn-map" class="action-btn secondary">🗺️ Ver mapa</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
