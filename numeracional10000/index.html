@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numeración Espacial · hasta 10.000</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars-bg"></div>
+
+<section id="map" class="screen active">
+  <header class="top">
+    <div>
+      <p class="eyebrow">3er grado · Numeración hasta 10.000</p>
+      <h1>Misión <span>Numérica</span></h1>
+    </div>
+    <div class="stats">
+      <div class="pill" id="rank">Cadete 🧑‍🚀</div>
+      <div class="pill">⭐ <b id="total">0</b>/90</div>
+    </div>
+  </header>
+  <p class="collection" id="collection"></p>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="game" class="screen">
+  <header class="top">
+    <button class="btn alt" id="back">← Mapa</button>
+    <h2 id="title">Actividad</h2>
+    <div class="pill">⭐ <b id="total2">0</b></div>
+  </header>
+  <main class="card">
+    <p id="prompt" class="prompt"></p>
+    <div id="area" class="area"></div>
+    <p id="msg" class="msg"></p>
+    <div class="actions">
+      <button class="btn" id="ok">Verificar ✅</button>
+      <button class="btn alt" id="skip" hidden>Seguir →</button>
+    </div>
+  </main>
+</section>
+
+<div id="win" class="overlay" hidden>
+  <div class="card win">
+    <div class="big">🏆</div>
+    <h2>¡Misión cumplida!</h2>
+    <div class="stars" id="wstars"></div>
+    <p id="wtxt"></p>
+    <div class="actions">
+      <button class="btn alt" id="wmap">🗺️ Mapa</button>
+      <button class="btn" id="wnext">Siguiente →</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
